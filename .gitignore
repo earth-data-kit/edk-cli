@@ -1,0 +1,9 @@
+.venv
+workspace
+data
+
+.env
+edk_cli.egg-info
+build
+dist
+__pycache__
