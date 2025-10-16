@@ -1,5 +1,4 @@
-# TODO: Update the docker file path to some container registry
-FROM edk:latest
+FROM ghcr.io/earth-data-kit/edk:latest
 
 # Copy requirements.txt from the workspace directory if it exists and install it
 ARG WORKSPACE_DIR
