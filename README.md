@@ -5,9 +5,9 @@ A CLI for earth-data-kit.
 
 ## Installation
 
-To install, download the latest release from GitHub and run:
+To install, run the below command. This downloads the latest release from GitHub and installs it.
 
-`pip3 install edk-cli`
+`pip3 install https://github.com/earth-data-kit/edk-cli/releases/download/0.1.0/edk_cli-0.1.0-py3-none-any.whl`
 
 ## Usage
 
