@@ -29,7 +29,7 @@ def edk():
     prompt="Workspace directory (Required)",
     default="./workspace",
     required=True,
-    type=click.Path(exists=True, file_okay=False, dir_okay=True),
+    type=click.Path(file_okay=False, dir_okay=True),
     callback=lambda _, __, value: value if value else None,
     help="The directory where your code is.",
 )
@@ -38,12 +38,16 @@ def edk():
     prompt="Data directory (Required)",
     default="./data",
     required=True,
-    type=click.Path(exists=True, file_okay=False, dir_okay=True),
+    type=click.Path(file_okay=False, dir_okay=True),
     callback=lambda _, __, value: value if value else None,
     help="The directory where all the data and mosaics will be stored.",
 )
 def configure(aws_config_dir, google_application_credentials, workspace_dir, data_dir):
     """Helps user create .env."""
+
+    # Create directories if they don't exist
+    os.makedirs(workspace_dir, exist_ok=True)
+    os.makedirs(data_dir, exist_ok=True)
 
     with open("./.env", "w") as f:
         f.write(f"AWS_CONFIG_DIR={aws_config_dir}\n")
@@ -52,6 +56,7 @@ def configure(aws_config_dir, google_application_credentials, workspace_dir, dat
         f.write(f"DATA_DIR={data_dir}\n")
 
     click.secho(".env file created successfully.\n", fg="green")
+    click.secho(f"Created directories:\n  - {workspace_dir}\n  - {data_dir}\n", fg="green")
     click.secho("You can find more options about environment variables at https://earth-data-kit.github.io/getting-started.html#environment-configuration", fg="green")
 
 
