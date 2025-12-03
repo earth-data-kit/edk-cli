@@ -49,10 +49,6 @@ def configure(aws_config_dir, google_application_credentials, workspace_dir, dat
     os.makedirs(workspace_dir, exist_ok=True)
     os.makedirs(data_dir, exist_ok=True)
 
-    # Convert relative paths to absolute paths for consistency
-    workspace_dir = os.path.abspath(workspace_dir)
-    data_dir = os.path.abspath(data_dir)
-
     with open("./.env", "w") as f:
         f.write(f"AWS_CONFIG_DIR={aws_config_dir}\n")
         f.write(f"GOOGLE_APPLICATION_CREDENTIALS={google_application_credentials}\n")
