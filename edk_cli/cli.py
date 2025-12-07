@@ -62,13 +62,6 @@ def run():
     if not os.path.exists("./.env"):
         raise FileNotFoundError(".env file not found. Please run 'edk configure' first.")
     
-    click.secho(f"Building edk container...\n", fg="green")
-    dockerfile_path = ir.files("edk_cli") / "scripts" / "Dockerfile"
-    script = ir.files("edk_cli") / "scripts" / "build.sh"
-    command = f"bash {script} {dockerfile_path}"
-    os.system(command)
-
-
     click.secho(f"Running edk container...\n", fg="green")
     script = ir.files("edk_cli") / "scripts" / "run.sh"
     command = f"bash {script}"
