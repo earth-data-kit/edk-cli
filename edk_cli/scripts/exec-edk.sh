@@ -3,5 +3,6 @@ if [ -z "$CONTAINER_NAME" ]; then
   echo "No running container found with name matching 'edk-workspace'."
   exit 1
 fi
+
 docker exec -it "$CONTAINER_NAME" /bin/bash
 
