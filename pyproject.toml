@@ -1,6 +1,6 @@
 [project]
 name = "edk-cli"
-version = "0.1.0"
+version = "0.1.1"
 description = "EDK CLI"
 authors = [{ name = "Siddhant Gupta", email = "siddhantgupta3@gmail.com" }]
 readme = { file = "README.md", content-type = "text/markdown" }
